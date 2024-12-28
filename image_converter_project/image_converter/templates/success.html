@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Successful</title>
+</head>
+<body>
+    <h2>Images Uploaded and Converted Successfully</h2>
+    <ul>
+        {% for image in UploadedImage.objects.all %}
+        <li>
+            <b>Original Image:</b> <a href="{{ image.original_image.url }}" target="_blank">View</a> <br>
+            <b>Converted Image:</b> <a href="{{ image.converted_image.url }}" target="_blank">View</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
